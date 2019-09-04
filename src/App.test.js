@@ -22,6 +22,20 @@ describe('testing if button elements exist', () => {
   })
 })
 
+//  expect(login.find('img').prop('src')).toEqual(IMAGE_PATH);
+
+describe('testing if Square has property onClick ', () => {
+  it('onClick attribute exists', () => {
+    const component = mount(<Square/>);
+    expect(component.find('.square').get(0).props).to.have.property('onClick');
+    // expect(component.find('.square').filterWhere((item) => {
+    //   console.log(item.debug())
+    //   return item.prop('onClick') === props.onClick;
+    // })).to.have.lengthOf(1);
+  })
+})
+
+
 it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<App />, div);
