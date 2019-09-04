@@ -4,7 +4,7 @@ import App from './App';
 import Adapter from 'enzyme-adapter-react-16';
 import { shallow, configure } from 'enzyme';
 import { expect } from 'chai';
-import Square from './Square';
+import Square from './components/square/Square';
 
 configure({ adapter: new Adapter() });
 
