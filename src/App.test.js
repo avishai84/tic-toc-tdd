@@ -37,10 +37,19 @@ describe('if property onClick point to props.onclick', () => {
     expect(component.props().onClick).to.equal('props.onclick');
   })
 })
-    // expect(component.find('.square').filterWhere((item) => {
-    //   console.log(item.debug())
-    //   return item.prop('onClick') === props.onClick;
-    // })).to.have.lengthOf(1);
+
+describe('testing user click', () => {
+  let counter = 0;
+  it('simulates click events on Square component', () => {
+    const component = mount(<Square onClick={counter++} className={'name_'+counter}/>);
+    expect(component.setState({count:0}));
+    console.log(component.state().debug());
+    expect(component.find('.name_0').length).to.equal(0);
+    component.find('.name_0').simulate('click');
+    console.log(component.debug())
+    expect(component.find('.name_1').length).to.equal(0);
+  })
+})
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
