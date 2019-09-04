@@ -31,10 +31,10 @@ describe('testing if Square has property onClick ', () => {
   })
 })
 
-describe('if property onClick point to props.onlick', () => {
+describe('if property onClick point to props.onclick', () => {
   it('onClick property props exists', () => {
-    const component = mount(<Square onClick={'props.onClick'}/>);
-    expect(component.props().onClick).to.equal('props.onClick');
+    const component = mount(<Square onClick='props.onclick'/>);
+    expect(component.props().onClick).to.equal('props.onclick');
   })
 })
     // expect(component.find('.square').filterWhere((item) => {
