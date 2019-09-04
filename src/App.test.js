@@ -33,7 +33,7 @@ describe('testing if Square has property onClick ', () => {
 
 describe('if property onClick point to props.onlick', () => {
   it('onClick property props exists', () => {
-    const component = mount(<Square onClick={props.onClick}/>);
+    const component = mount(<Square onClick={'props.onClick'}/>);
     expect(component.props().onClick).to.equal('props.onClick');
   })
 })
