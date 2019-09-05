@@ -24,8 +24,6 @@ describe('testing if button elements exist', () => {
   })
 })
 
-//  expect(login.find('img').prop('src')).toEqual(IMAGE_PATH);
-
 describe('testing if Square has property onClick ', () => {
   it('onClick attribute exists', () => {
     const component = mount(<Square/>);
@@ -40,20 +38,22 @@ describe('if property onClick point to props.onclick', () => {
   })
 })
 
+it('will find Board if Board component exit', () => {
+  const component = shallow(<Board />);
+  expect(component.find('.Board').length).to.equal(1);
+})
 
+it('will find Square as a child of Board', () => {
+  const component = shallow(<Board />);
+  console.log(component.debug())
+  expect(component.contains(<Square/>)).to.equal(true);
+})
 
-  it('will find Board if Board component exit', () => {
-    const component = shallow(<Board />);
-    expect(component.find('.Board').length).to.equal(1);
-  })
-
-
-  it('will find Square as a child of Board', () => {
-    const component = shallow(<Board />);
-    console.log(component.debug())
-    expect(component.contains(<Square/>)).to.equal(true);
-  })
-
+it('will test Square for prop name square ', () => {
+  const component = shallow(<Board />);
+  console.log(component.debug())
+  expect(component.find(<Square/>).get(0).props.children).to.be.equal('square');
+})
 
 
 it('renders without crashing', () => {
