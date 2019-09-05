@@ -14,8 +14,8 @@ it('will Board component exist', () => {
 
 describe('props square', () => {
     it('will find prop square', () => {
-        const component = shallow(<Square name='ticToc1'/>);
-        expect(component.props().name).to.equal('ticToc1');
+        const component = shallow(<Square name='ticToc'/>);
+        expect(component.props().name).to.equal('ticToc');
     })
   })
 
