@@ -41,15 +41,20 @@ describe('if property onClick point to props.onclick', () => {
 })
 
 
-describe('if Board component exit', () => {
-  it('will find Board', () => {
+
+  it('will find Board if Board component exit', () => {
     const component = shallow(<Board />);
-    console.log(component.debug())
-    expect(component.containsMatchingElement(<div className="Board"></div>)).to.equal(true);
+    expect(component.find('.Board').length).to.equal(1);
   })
-})
 
 
+// describe('if Board component has child of Square', () => {
+//   it('will find Square as a child', () => {
+//     const component = mount(<Board />);
+//     console.log(component.debug())
+//     expect(component.matchesElement(<Square></Square>).length).to.equal(true);
+//   })
+// })
 
 
 it('renders without crashing', () => {
