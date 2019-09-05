@@ -48,13 +48,12 @@ describe('if property onClick point to props.onclick', () => {
   })
 
 
-// describe('if Board component has child of Square', () => {
-//   it('will find Square as a child', () => {
-//     const component = mount(<Board />);
-//     console.log(component.debug())
-//     expect(component.matchesElement(<Square></Square>).length).to.equal(true);
-//   })
-// })
+  it('will find Square as a child of Board', () => {
+    const component = shallow(<Board />);
+    console.log(component.debug())
+    expect(component.contains(<Square/>)).to.equal(true);
+  })
+
 
 
 it('renders without crashing', () => {
