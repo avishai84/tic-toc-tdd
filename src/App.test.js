@@ -6,7 +6,7 @@ import { shallow, configure , mount} from 'enzyme';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import Square from './components/square/Square';
-
+import Board from './components/board/Board';
 
 configure({ adapter: new Adapter() });
 
@@ -43,8 +43,9 @@ describe('if property onClick point to props.onclick', () => {
 
 describe('if Board component exit', () => {
   it('will find Board', () => {
-    const component = mount(<Board />);
-    expect(component.containsMatchingElement().to.equal(true))
+    const component = shallow(<Board />);
+    console.log(component.debug())
+    expect(component.containsMatchingElement(<div className="Board"></div>)).to.equal(true);
   })
 })
 
