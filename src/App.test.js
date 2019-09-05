@@ -4,8 +4,9 @@ import App from './App';
 import Adapter from 'enzyme-adapter-react-16';
 import { shallow, configure , mount} from 'enzyme';
 import { expect } from 'chai';
+import sinon from 'sinon';
 import Square from './components/square/Square';
-import Board from './components/board/Board';
+
 
 configure({ adapter: new Adapter() });
 
@@ -39,19 +40,14 @@ describe('if property onClick point to props.onclick', () => {
   })
 })
 
-describe('testing user click', () => {
-  let counter = 0;
-  const inc = () => counter = counter++;
-  it('simulates click events on Square component', () => {
-    const component = mount(<Square onClick={inc()} className={'name_'+counter}/>);
-    console.log(component.debug());
-    expect(component.find('.name_0')).to.have.lengthOf(1);
-    component.find('.name_0').simulate('click');
-  
-    console.log(component.debug())
-    expect(component.find('.name_1').length).to.equal(1);
+
+describe('if Board component exit', () => {
+  it('will find Board', () => {
+    const component = mount(<Board />);
+    expect(component.containsMatchingElement().to.equal(true))
   })
 })
+
 
 
 

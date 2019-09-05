@@ -6,7 +6,8 @@ class Board extends Component{
     constructor(props){
         super(props);
         this.state = {
-            sqr: this.props.squares
+            sqr: this.props.squares,
+            counter: 0
         
         };
     }
