@@ -66,7 +66,7 @@ describe('test Game', () =>{
     const para = component.find('p');
     const pText = para.text();
     console.log(pText);
-    expect(pText).to.equal('O');
+    expect(pText).to.equal('X');
   
   })
 })
