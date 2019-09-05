@@ -34,4 +34,3 @@ describe('if property onClick point to props.onclick', () => {
   })
 })
 
-

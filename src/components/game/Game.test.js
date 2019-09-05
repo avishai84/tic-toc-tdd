@@ -11,7 +11,6 @@ describe('test Game', () =>{
     const component = shallow(<Game/>);
     const para = component.find('p');
     const pText = para.text();
-    console.log(pText);
     expect(pText).to.equal('X');
   
   })

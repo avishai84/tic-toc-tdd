@@ -21,6 +21,10 @@ class Board extends Component{
         const isShown = this.state.isShown;
         return (
             <div className="Board">
+                 <Fragment>  
+                    <button onClick={this.foo.bind(this)}>toggle</button>
+                  {isShown && <p>Hello world</p>}  
+                  </Fragment>
                 <Square 
                 square={this.props.squares} 
                 >

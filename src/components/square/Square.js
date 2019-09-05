@@ -3,7 +3,7 @@ import React from 'react';
 function Square(props) {
   const { includedProp } = props;
   return (
-    <div className="square" onClick={includedProp}>
+    <div className="square" onClick={includedProp} name='ticToc'>
       <div className="row1">
         <button id="0"></button>
         <button id="1"></button>
