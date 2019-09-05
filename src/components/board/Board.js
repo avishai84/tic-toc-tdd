@@ -7,17 +7,25 @@ class Board extends Component{
         super(props);
         this.state = {
             sqr: this.props.squares,
-            counter: 0
+            isShown: true
         
         };
     }
- 
+ foo(){
+     this.setState({
+        isShown: !this.state.isShown
+     })
+ }
 
     render(){
-
+        const isShown = this.state.isShown;
         return (
             <div className="Board">
-                <Square/>
+                <Square 
+                square={this.props.squares} 
+                >
+               
+                </Square>
             </div>
           );
     }
